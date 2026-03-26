@@ -1,3 +1,18 @@
+# Hero IO
+
+Hero IO is a responsive app discovery platform where users can browse apps, search and sort them, view details with rating charts, install apps, and manage installations from local storage.
+
+## Technologies
+
+- React
+- React Router DOM
+- Recharts
+- React Toastify
+- Vite
+- CSS3
+
+---
+
 # 🦸‍♂️ Assignment 03 — Hero IO
 
 

@@ -1,18 +1,29 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { apps } from "../data/apps";
 import AppCard from "../shared/AppCard";
 
 function AllAppsPage() {
   const [search, setSearch] = useState("");
+  const [liveSearch, setLiveSearch] = useState("");
   const [sortBy, setSortBy] = useState("none");
+  const [searchLoading, setSearchLoading] = useState(false);
+
+  useEffect(() => {
+    setSearchLoading(true);
+    const timer = setTimeout(() => {
+      setLiveSearch(search);
+      setSearchLoading(false);
+    }, 300);
+    return () => clearTimeout(timer);
+  }, [search]);
 
   const filteredApps = useMemo(() => {
-    const normalized = search.trim().toLowerCase();
+    const normalized = liveSearch.trim().toLowerCase();
     let list = apps.filter((app) => app.title.toLowerCase().includes(normalized));
     if (sortBy === "high") list = [...list].sort((a, b) => b.downloads - a.downloads);
     if (sortBy === "low") list = [...list].sort((a, b) => a.downloads - b.downloads);
     return list;
-  }, [search, sortBy]);
+  }, [liveSearch, sortBy]);
 
   return (
     <section className="space-y">
@@ -38,7 +49,12 @@ function AllAppsPage() {
         </div>
       </div>
 
-      {filteredApps.length === 0 ? (
+      {searchLoading ? (
+        <div className="search-loading">
+          <span className="loader" />
+          <p>Searching apps...</p>
+        </div>
+      ) : filteredApps.length === 0 ? (
         <div className="no-result">
           <img src="/assets/App-Error.png" alt="No app found" />
           <h3>No App Found</h3>

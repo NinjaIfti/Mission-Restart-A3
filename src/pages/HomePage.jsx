@@ -8,7 +8,7 @@ function HomePage() {
   return (
     <section className="space-y">
       <div className="hero">
-        <div>
+        <div className="hero-content">
           <h1>Find the best apps for your workflow</h1>
           <p>Hero IO helps you discover top-rated apps with reviews and install tracking.</p>
           <div className="hero-buttons">

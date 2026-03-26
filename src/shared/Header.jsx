@@ -5,6 +5,7 @@ const navItems = [
   { to: "/apps", label: "Apps" },
   { to: "/installation", label: "Installation" },
 ];
+const contributionUrl = import.meta.env.VITE_GITHUB_PROFILE || "https://github.com/";
 
 function Header() {
   return (
@@ -30,7 +31,7 @@ function Header() {
 
         <a
           className="btn btn-outline"
-          href="https://github.com/"
+          href={contributionUrl}
           target="_blank"
           rel="noreferrer"
         >
