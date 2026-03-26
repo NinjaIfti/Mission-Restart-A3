@@ -516,6 +516,104 @@ a {
   gap: 10px;
 }
 
+.installation-page {
+  gap: 22px;
+}
+
+.installation-title {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.installation-title h1 {
+  font-size: clamp(44px, 5vw, 70px);
+  margin: 0;
+}
+
+.installation-title p {
+  margin-top: 8px;
+  color: #6b7280;
+}
+
+.installation-list-wrap {
+  display: grid;
+  gap: 10px;
+}
+
+.installation-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.installation-toolbar h3 {
+  margin: 0;
+  font-size: 38px;
+}
+
+.installation-toolbar select {
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  padding: 8px 10px;
+  background: #f5f5f5;
+}
+
+.installation-list {
+  display: grid;
+  gap: 12px;
+}
+
+.install-row {
+  background: #f7f7f7;
+  border: 1px solid #ececec;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 74px 1fr auto;
+  align-items: center;
+  gap: 14px;
+}
+
+.install-row img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.install-row h4 {
+  margin: 0 0 4px;
+  font-size: 34px;
+  font-weight: 600;
+}
+
+.install-row p {
+  margin: 0;
+  display: flex;
+  gap: 14px;
+  color: #6b7280;
+  font-size: 22px;
+}
+
+.install-row p span:first-child {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.install-row p span:nth-child(2) {
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+.uninstall-btn {
+  border: 0;
+  background: #10d59f;
+  color: white;
+  border-radius: 4px;
+  padding: 10px 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 .footer {
   border-top: 0;
   background: #071d3c;
@@ -595,6 +693,23 @@ a {
   .details-cover {
     max-width: 340px;
   }
+
+  .install-row {
+    grid-template-columns: 60px 1fr;
+  }
+
+  .uninstall-btn {
+    grid-column: 1/-1;
+    justify-self: start;
+  }
+
+  .install-row h4 {
+    font-size: 24px;
+  }
+
+  .install-row p {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -625,5 +740,15 @@ a {
 
   .app-grid {
     grid-template-columns: 1fr;
+  }
+
+  .installation-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .installation-toolbar h3 {
+    font-size: 28px;
   }
 }
