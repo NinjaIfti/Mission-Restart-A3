@@ -25,7 +25,7 @@ function AppDetailsPage() {
   if (!app) {
     return (
       <div className="not-found-card">
-        <img src="/assets/App-Error.png" alt="App not found" />
+        <img src="/App-Error.png" alt="App not found" />
         <h2>App Not Found</h2>
         <p>The app details you are looking for are unavailable.</p>
       </div>

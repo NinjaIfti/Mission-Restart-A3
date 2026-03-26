@@ -5,9 +5,8 @@ function AppCard({ app }) {
     <Link className="app-card" to={`/apps/${app.id}`}>
       <img src={app.image} alt={app.title} />
       <h4>{app.title}</h4>
-      <p>{app.companyName}</p>
       <div className="meta">
-        <span>⬇ {app.downloads.toLocaleString()}</span>
+        <span>⬇ {Math.round(app.downloads / 1000)}M</span>
         <span>⭐ {app.ratingAvg}</span>
       </div>
     </Link>

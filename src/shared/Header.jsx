@@ -12,7 +12,7 @@ function Header() {
     <header className="header">
       <div className="container header-inner">
         <Link to="/" className="logo-wrap">
-          <img src="/assets/logo.png" alt="Hero IO" className="logo" />
+          <img src="/logo.png" alt="Hero IO" className="logo" />
           <span>Hero IO</span>
         </Link>
 

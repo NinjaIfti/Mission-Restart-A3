@@ -27,7 +27,7 @@ function InstallationPage() {
 
       {installedApps.length === 0 ? (
         <div className="not-found-card">
-          <img src="/assets/App-Error.png" alt="No installed apps" />
+          <img src="/App-Error.png" alt="No installed apps" />
           <h2>No Installed Apps Yet</h2>
           <p>Install apps from the details page to see them here.</p>
         </div>

@@ -6,46 +6,62 @@ function HomePage() {
   const topApps = [...apps].sort((a, b) => b.downloads - a.downloads).slice(0, 8);
 
   return (
-    <section className="space-y">
-      <div className="hero">
-        <div className="hero-content">
-          <h1>Find the best apps for your workflow</h1>
-          <p>Hero IO helps you discover top-rated apps with reviews and install tracking.</p>
-          <div className="hero-buttons">
-            <a className="btn" href="https://www.apple.com/app-store/" target="_blank" rel="noreferrer">
-              App Store
+    <section className="space-y home-page">
+      <div className="hero hero-home">
+        <div className="hero-content hero-home-content">
+          <h1>
+            We Build
+            <br />
+            <span>Productive</span> Apps
+          </h1>
+          <p>
+            At HERO IO, we craft innovative apps designed to make everyday life simpler, smarter,
+            and more exciting. Our goal is to turn your ideas into digital experiences that truly
+            make an impact.
+          </p>
+          <div className="hero-buttons home-store-buttons">
+            <a className="store-btn" href="https://play.google.com/store" target="_blank" rel="noreferrer">
+              Google Play
             </a>
-            <a className="btn btn-dark" href="https://play.google.com/store" target="_blank" rel="noreferrer">
-              Play Store
+            <a className="store-btn" href="https://www.apple.com/app-store/" target="_blank" rel="noreferrer">
+              App Store
             </a>
           </div>
         </div>
-        <img src="/assets/hero.png" alt="Hero section" />
+        <img src="/hero.png" alt="Hero section" className="hero-phone" />
       </div>
 
-      <div className="stats">
+      <div className="stats home-stats-band">
+        <h2>Trusted By Millions, Built For You</h2>
         <article>
-          <h3>{apps.length}+</h3>
-          <p>Featured Apps</p>
+          <small>Total Downloads</small>
+          <h3>29.6M</h3>
+          <p>29.6M More Than Last Month</p>
         </article>
         <article>
-          <h3>4.7</h3>
-          <p>Average Rating</p>
+          <small>Total Reviews</small>
+          <h3>906K</h3>
+          <p>40% More Than Last Month</p>
         </article>
         <article>
-          <h3>2M+</h3>
-          <p>Total Downloads</p>
+          <small>Active Apps</small>
+          <h3>132+</h3>
+          <p>31 More This Month</p>
         </article>
       </div>
 
-      <div className="section-head">
-        <h2>Top Apps</h2>
-        <Link className="btn btn-outline" to="/apps">
-          Show All
-        </Link>
+      <div className="home-trending-head">
+        <h2>Trending Apps</h2>
+        <p>Explore all trending apps on the market developed by us</p>
       </div>
 
       <div className="app-grid">{topApps.map((app) => <AppCard key={app.id} app={app} />)}</div>
+
+      <div className="home-show-all-wrap">
+        <Link className="btn home-show-all" to="/apps">
+          Show All
+        </Link>
+      </div>
     </section>
   );
 }

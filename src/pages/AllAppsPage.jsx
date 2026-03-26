@@ -56,7 +56,7 @@ function AllAppsPage() {
         </div>
       ) : filteredApps.length === 0 ? (
         <div className="no-result">
-          <img src="/assets/App-Error.png" alt="No app found" />
+          <img src="/App-Error.png" alt="No app found" />
           <h3>No App Found</h3>
         </div>
       ) : (
